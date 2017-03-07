@@ -15,8 +15,6 @@ source:
 
 build:
   number: 0
-  # For now, due to Travis time limit, we restrict the build matrix.
-  skip: True  # [osx and (py36 or np!=111)]
   features:
     - vc9   # [win and py27]
     - vc14  # [win and py35]
