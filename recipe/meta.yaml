@@ -1,6 +1,6 @@
 {% set name = "pystan" %}
-{% set version = "2.14.0.0" %}
-{% set sha256sum = "3bed255ca7d35bbd4ed0d5f30470744d9a71b06c1fa8b88281053dd430b0b1b2" %}
+{% set version = "2.15.0.0" %}
+{% set sha256sum = "5dc420277eadb72c459bc550feb8d43edb98f328141b4ccaaa4d0a0baaefd7f1" %}
 
 package:
   name: {{ name }}
@@ -15,15 +15,14 @@ source:
 
 build:
   number: 0
+  skip: True  # [win and py27]
   features:
-    - vc9   # [win and py27]
     - vc14  # [win and py35]
     - vc14  # [win and py36]
   detect_binary_files_with_prefix: False
 
 requirements:
   build:
-    - msinttypes  # [win and py27]
     - python
     - setuptools
     - numpy >=1.7
