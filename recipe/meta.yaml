@@ -12,23 +12,23 @@ source:
   sha256: {{ sha256sum }}
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win and py27]
-  features:
-    - vc14  # [win and py35]
-    - vc14  # [win and py36]
   detect_binary_files_with_prefix: False
 
 requirements:
   build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
     - python
     - setuptools
-    - numpy >=1.7
+    - numpy
     - cython >=0.22,!=0.25.1
 
   run:
     - python
-    - numpy >=1.7
+    - numpy
     - cython >=0.22,!=0.25.1
     - matplotlib
 
