@@ -28,7 +28,7 @@ requirements:
 
   run:
     - python
-    - {{ pinc_compatible('numpy') }}
+    - {{ pin_compatible('numpy') }}
     - cython >=0.22,!=0.25.1
     - matplotlib
 
