@@ -11,7 +11,7 @@ source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256sum }}
   patches:
-    - 0001-Add-compiler-flag-for-realigning-stack.patch
+    # - 0001-Add-compiler-flag-for-realigning-stack.patch
     - 0002-Replace-logger-with-print.patch
 
 build:
@@ -20,23 +20,27 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
     - m2-patch                     # [win]
+    - {{ compiler('c') }}          # [not (win and vc<14)]
+    - {{ compiler('cxx') }}        # [not (win and vc<14)]
   host:
     - python
     - setuptools
     - numpy
     - cython >=0.22,!=0.25.1
+    # The VS2008 build of PyStan fails with:
+    # fatal error C1060: compiler is out of heap space
+    # so we use the m2w64-toolchain here
+    - m2w64-toolchain              # [win and vc<14]
   run:
-    # https://pystan.readthedocs.io/en/latest/getting_started.html
-    # "PyStan also requires that a C++ compiler be available to
-    #  Python during installation and at runtime."
-    - {{ compiler('cxx') }}  # [not win]
     # https://pystan.readthedocs.io/en/latest/windows.html
     # PyStan requires a C++ compiler for building models. For
     # full support of vectorized functions, gcc is recommended.
     - m2w64-toolchain        # [win]
+    # https://pystan.readthedocs.io/en/latest/getting_started.html
+    # "PyStan also requires that a C++ compiler be available to
+    #  Python during installation and at runtime."
+    - {{ compiler('cxx') }}  # [not win]
     - python
     - {{ pin_compatible('numpy') }}
     - cython >=0.22,!=0.25.1
