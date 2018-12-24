@@ -10,6 +10,8 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256sum }}
+  patches:
+    - windows_logger.patch
 
 build:
   number: 1003
@@ -20,6 +22,7 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - m2-patch                     # [win]
   host:
     - python
     - setuptools
