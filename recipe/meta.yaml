@@ -11,7 +11,8 @@ source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256sum }}
   patches:
-    - windows_logger.patch
+    - 0001-Add-compiler-flag-for-realigning-stack.patch
+    - 0002-Replace-logger-with-print.patch
 
 build:
   number: 1003
@@ -28,7 +29,6 @@ requirements:
     - setuptools
     - numpy
     - cython >=0.22,!=0.25.1
-
   run:
     # https://pystan.readthedocs.io/en/latest/getting_started.html
     # "PyStan also requires that a C++ compiler be available to

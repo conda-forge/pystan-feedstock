@@ -1,0 +1,25 @@
+From 2f11b851896e7eceb74956437e37d319d0504da3 Mon Sep 17 00:00:00 2001
+From: Ari Hartikainen <ahartikainen@users.noreply.github.com>
+Date: Wed, 29 Aug 2018 23:21:05 +0300
+Subject: [PATCH 2/2] Replace logger with print
+
+---
+ setup.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/setup.py b/setup.py
+index 1aa7f513..117dcfb7 100644
+--- a/setup.py
++++ b/setup.py
+@@ -122,7 +122,7 @@ extra_compile_args = [
+ if platform.platform().startswith('Win'):
+     from Cython.Build.Inline import _get_build_extension
+     if _get_build_extension().compiler in (None, 'msvc'):
+-        logger.warning("MSVC is not supported")
++        print("Warning: MSVC is not supported")
+         extra_compile_args = [
+             '/EHsc',
+             '-DBOOST_DATE_TIME_NO_LIB',
+-- 
+2.17.0
+
