@@ -36,6 +36,9 @@ requirements:
     - matplotlib
 
 test:
+  requires:
+    # Should this go in the run section???
+    - {{ compiler('c') }}
   imports:
     - pystan
 
