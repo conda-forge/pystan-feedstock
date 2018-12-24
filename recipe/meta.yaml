@@ -30,18 +30,20 @@ requirements:
     - cython >=0.22,!=0.25.1
 
   run:
+    # https://pystan.readthedocs.io/en/latest/getting_started.html
+    # "PyStan also requires that a C++ compiler be available to
+    #  Python during installation and at runtime."
+    - {{ compiler('cxx') }}  # [not win]
+    # https://pystan.readthedocs.io/en/latest/windows.html
+    # PyStan requires a C++ compiler for building models. For
+    # full support of vectorized functions, gcc is recommended.
+    - m2w64-toolchain        # [win]
     - python
     - {{ pin_compatible('numpy') }}
     - cython >=0.22,!=0.25.1
     - matplotlib
 
 test:
-  requires:
-    # Should this go in the run section???
-    # https://pystan.readthedocs.io/en/latest/getting_started.html
-    # "PyStan also requires that a C++ compiler be available to
-    #  Python during installation and at runtime."
-    - {{ compiler('cxx') }}
   imports:
     - pystan
 
