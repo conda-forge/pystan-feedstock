@@ -41,6 +41,7 @@ requirements:
     # https://pystan.readthedocs.io/en/latest/getting_started.html
     # "PyStan also requires that a C++ compiler be available to
     #  Python during installation and at runtime."
+    - {{ compiler('c') }}    # [not win]
     - {{ compiler('cxx') }}  # [not win]
     - python
     - {{ pin_compatible('numpy') }}
