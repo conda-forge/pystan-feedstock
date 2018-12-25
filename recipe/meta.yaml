@@ -50,7 +50,8 @@ requirements:
 
 test:
   files:
-    - setup.cfg
+    # Windows needs this file to setup disutils correctly
+    - setup.cfg  # [win]
   imports:
     - pystan
 
