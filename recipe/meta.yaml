@@ -47,6 +47,8 @@ requirements:
     - matplotlib
 
 test:
+  files:
+    - setup.cfg
   imports:
     - pystan
 
