@@ -27,5 +27,5 @@ schools_dat = {'J': 8,
                'sigma': [15, 10, 16, 11,  9, 11, 10, 18]}
 
 fit = pystan.stan(model_code=schools_code, data=schools_dat,
-                  iter=1000, chains=4, n_jobs=1)
+                  iter=1000, chains=4, n_jobs=1, verbose=True)
 print(fit)
