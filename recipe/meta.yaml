@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256sum }}
 
 build:
-  number: 2
+  number: 1003
   skip: True  # [win and py27]
   detect_binary_files_with_prefix: False
 
@@ -25,10 +25,15 @@ requirements:
     - setuptools
     - numpy
     - cython >=0.22,!=0.25.1
-
   run:
+    # http://pystan.readthedocs.io/en/latest/windows.html
+    # PyStan requires a C++ compiler for building models. For
+    # full support of vectorized functions, gcc is recommended.
+    - m2w64-toolchain        # [win]
+    - {{ compiler('c') }}    # [not win]
+    - {{ compiler('cxx') }}  # [not win]
     - python
-    - numpy
+    - {{ pin_compatible('numpy') }}
     - cython >=0.22,!=0.25.1
     - matplotlib
 
@@ -51,3 +56,4 @@ about:
 extra:
   recipe-maintainers:
     - rmax
+    - beckermr
