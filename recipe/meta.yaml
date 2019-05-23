@@ -18,11 +18,11 @@ build:
 
 requirements:
   build:
-    - posix                       # [win]
-    - {{ compiler('c') }}         # [not win]
-    - {{ compiler('m2w64_c') }}   # [win]
-    - {{ compiler('cxx') }}       # [not win]
-    - {{ compiler('m2w64_cxx') }} # [win]
+    - posix  # [win]
+    - {{ compiler('c') }}  # [not win]
+    - {{ compiler('m2w64_c') }}  # [win]
+    - {{ compiler('cxx') }}  # [not win]
+    - {{ compiler('m2w64_cxx') }}  # [win]
   host:
     - python
     - setuptools
@@ -32,11 +32,11 @@ requirements:
     # http://pystan.readthedocs.io/en/latest/windows.html
     # PyStan requires a C++ compiler for building models. For
     # full support of vectorized functions, gcc is recommended.
-    - posix                       # [win]
-    - {{ compiler('c') }}         # [not win]
-    - {{ compiler('m2w64_c') }}   # [win]
-    - {{ compiler('cxx') }}       # [not win]
-    - {{ compiler('m2w64_cxx') }} # [win]
+    - posix  # [win]
+    - {{ compiler('c') }}  # [not win]
+    - {{ compiler('m2w64_c') }}  # [win]
+    - {{ compiler('cxx') }}  # [not win]
+    - {{ compiler('m2w64_cxx') }}  # [win]
     - python
     - {{ pin_compatible('numpy') }}
     - cython >=0.22,!=0.25.1
