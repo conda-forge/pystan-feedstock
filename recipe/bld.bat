@@ -3,7 +3,7 @@ set "STAN_VER=%PKG_VERSION:~0,-2%"
 pushd pystan\\stan\\lib\\stan_math
 if errorlevel 1 exit 1
 
-rd /q /s doc doxygen make test lib\\cpplist_4.45 lib\\gtest_1.7.0
+rd /q /s doc doxygen make test lib\\cpplist_4.45 lib\\gtest_1.8.1
 if errorlevel 1 exit 1
 
 popd
