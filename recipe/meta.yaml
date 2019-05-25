@@ -23,6 +23,10 @@ requirements:
     - {{ compiler('m2w64_c') }}  # [win]
     - {{ compiler('cxx') }}  # [not win]
     - {{ compiler('m2w64_cxx') }}  # [win]
+    - python
+    - setuptools
+    - numpy
+    - cython >=0.22,!=0.25.1
   host:
     - libpython  # [win]
     - {{ compiler('c') }}  # [not win]
@@ -41,6 +45,7 @@ requirements:
     - {{ compiler('cxx') }}  # [not win]
     - {{ compiler('m2w64_cxx') }}  # [win]
     - python
+    - setuptools
     - {{ pin_compatible('numpy') }}
     - cython >=0.22,!=0.25.1
     - matplotlib
