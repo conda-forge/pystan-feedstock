@@ -25,6 +25,7 @@ requirements:
     - {{ compiler('m2w64_cxx') }}  # [win]
   host:
     - python
+    - libpython  # [win]
     - setuptools
     - numpy
     - cython >=0.22,!=0.25.1
@@ -38,6 +39,7 @@ requirements:
     - {{ compiler('cxx') }}  # [not win]
     - {{ compiler('m2w64_cxx') }}  # [win]
     - python
+    - libpython  # [win]
     - {{ pin_compatible('numpy') }}
     - cython >=0.22,!=0.25.1
     - matplotlib
