@@ -31,6 +31,9 @@ requirements:
   run:
     - {{ compiler('c') }}  # [not win]
     - {{ compiler('cxx') }}  # [not win]
+    # http://pystan.readthedocs.io/en/latest/windows.html
+    - {{ compiler('m2w64_c') }}  # [win]
+    - {{ compiler('m2w64_cxx') }}  # [win]
     - python
     - {{ pin_compatible('numpy') }}
     - cython >=0.22,!=0.25.1
