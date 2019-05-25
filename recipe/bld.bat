@@ -6,8 +6,8 @@ if errorlevel 1 exit 1
 SETLOCAL ENABLEDELAYEDEXPANSION
 FOR /D /R "pystan/stan/lib/stan_math/lib" %%D IN (doc) DO @IF EXIST "%%D" RD /S /Q "%%D"
 FOR /D /R "pystan/stan/lib/stan_math/lib" %%D IN (test) DO @IF EXIST "%%D" RD /S /Q "%%D"
-FOR /D /R "pystan/stan/lib/stan_math/lib" gtest IN (%%D) DO @IF EXIST "%%D" RD /S /Q "%%D"
-FOR /D /R "pystan/stan/lib/stan_math/lib" cpplist IN (%%D) DO @IF EXIST "%%D" RD /S /Q "%%D"
+FOR /D /R "pystan/stan/lib/stan_math/lib" "gtest" IN (%%D) DO @IF EXIST "%%D" RD /S /Q "%%D"
+FOR /D /R "pystan/stan/lib/stan_math/lib" "cpplist" IN (%%D) DO @IF EXIST "%%D" RD /S /Q "%%D"
 
 
 rd /q /s doc doxygen make test lib\\cpplist_* lib\\gtest_*
