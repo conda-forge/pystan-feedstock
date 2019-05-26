@@ -24,6 +24,7 @@ requirements:
     - {{ compiler('m2w64_c') }}  # [win]
     - {{ compiler('m2w64_cxx') }}  # [win]
   host:
+    - libpython  # [win]
     - python
     - pip
     - numpy
@@ -34,19 +35,17 @@ requirements:
     # http://pystan.readthedocs.io/en/latest/windows.html
     - {{ compiler('m2w64_c') }}  # [win]
     - {{ compiler('m2w64_cxx') }}  # [win]
+    - libpython  # [win]
     - python
     - pip
     - {{ pin_compatible('numpy') }}
     - cython >=0.22,!=0.25.1
     - matplotlib
+    - arviz
 
 test:
   imports:
     - pystan
-  requires:
-    # http://pystan.readthedocs.io/en/latest/windows.html
-    - {{ compiler('m2w64_c') }}  # [win]
-    - {{ compiler('m2w64_cxx') }}  # [win]
 
 about:
   home: http://mc-stan.org/interfaces/pystan.html
