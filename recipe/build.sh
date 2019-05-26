@@ -4,6 +4,9 @@ set -ex
 STAN_VER=${PKG_VERSION:0:${#PKG_VERSION}-2}
 INSTALL_LOG=install.log
 
+# force recreate cython files
+rm -rf pystan/*.cpp
+
 # These folders are not needed in the build and we don't want to include them
 # in the package. This should be cleaned via MANIFEST.in.
 pushd pystan/stan/lib/stan_math

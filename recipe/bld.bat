@@ -1,5 +1,8 @@
 set "STAN_VER=%PKG_VERSION:~0,-2%"
 
+# force recreate cython files
+rm -rf pystan/*.cpp
+
 pushd pystan\\stan\\lib\\stan_math
 if errorlevel 1 exit 1
 
