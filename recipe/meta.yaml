@@ -24,6 +24,7 @@ requirements:
     - {{ compiler('m2w64_c') }}  # [win]
     - {{ compiler('m2w64_cxx') }}  # [win]
   host:
+    - libpython  # [win]
     - python
     - pip
     - numpy
@@ -34,6 +35,7 @@ requirements:
     # http://pystan.readthedocs.io/en/latest/windows.html
     - {{ compiler('m2w64_c') }}  # [win]
     - {{ compiler('m2w64_cxx') }}  # [win]
+    - libpython  # [win]
     - python
     - pip
     - {{ pin_compatible('numpy') }}
