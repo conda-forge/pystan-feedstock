@@ -1,6 +1,6 @@
 {% set name = "pystan" %}
-{% set version = "2.19.0.0" %}
-{% set sha256sum = "b85301b960d5991918b40bd64a4e9321813657a9fc028e0f39edce7220a309eb" %}
+{% set version = "2.18.1.0" %}
+{% set sha256sum = "f8d50218d00848bff7cc9f33471eb5c0cf0f84af0a807963349a7931bb782b46" %}
 
 package:
   name: {{ name }}
@@ -31,9 +31,6 @@ requirements:
   run:
     - {{ compiler('c') }}  # [not win]
     - {{ compiler('cxx') }}  # [not win]
-    # http://pystan.readthedocs.io/en/latest/windows.html
-    - {{ compiler('m2w64_c') }}  # [win]
-    - {{ compiler('m2w64_cxx') }}  # [win]
     - python
     - {{ pin_compatible('numpy') }}
     - cython >=0.22,!=0.25.1
