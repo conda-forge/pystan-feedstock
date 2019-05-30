@@ -48,6 +48,7 @@ install:
 build: off
 
 test_script:
+    - cmd: call %CONDA_INSTALL_LOCN%\Scripts\activate.bat
     - conda.exe build recipe -m .ci_support\%CONFIG%.yaml
 deploy_script:
     - cmd: upload_package .\ .\recipe .ci_support\%CONFIG%.yaml
