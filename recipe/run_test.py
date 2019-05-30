@@ -1,4 +1,6 @@
 import pystan
+import os
+print(os)
 
 schools_code = """
 data {
