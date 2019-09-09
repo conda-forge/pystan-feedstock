@@ -25,21 +25,24 @@ requirements:
     - {{ compiler('m2w64_cxx') }}  # [win]
     - libpython  # [win]
     - setuptools
-    - cython >=0.22,!=0.25.1
     - numpy
-    - {{ pin_compatible('numpy') }}
+    - cython >=0.22,!=0.25.1
   host:
     - python
     - pip
     - numpy
     - cython >=0.22,!=0.25.1
+    - setuptools
+    - libpython  # [win]
   run:
     - python
     - pip
     - {{ pin_compatible('numpy') }}
     - cython >=0.22,!=0.25.1
+    - setuptools
     - matplotlib
     - arviz  # [py>=35]
+    - libpython  # [win]
 
 test:
   imports:
@@ -54,7 +57,6 @@ test:
     - setuptools
     - cython >=0.22,!=0.25.1
     - numpy
-    - {{ pin_compatible('numpy') }}
 
 about:
   home: http://mc-stan.org/interfaces/pystan.html
