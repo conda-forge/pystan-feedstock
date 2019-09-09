@@ -13,7 +13,7 @@ source:
 
 build:
   number: 1004
-  skip: False  # [win and py27]
+  skip: True  # [win and py27]
   detect_binary_files_with_prefix: False
 
 requirements:
@@ -24,15 +24,14 @@ requirements:
     - {{ compiler('m2w64_c') }}  # [win]
     - {{ compiler('m2w64_cxx') }}  # [win]
     - libpython  # [win]
+    - setuptools
   host:
     - python
-    - setuptools
     - pip
     - numpy
     - cython >=0.22,!=0.25.1
   run:
     - python
-    - setuptools
     - pip
     - {{ pin_compatible('numpy') }}
     - cython >=0.22,!=0.25.1
@@ -43,13 +42,13 @@ test:
   imports:
     - pystan
   requires:
-    - libpython  # [win]
     - {{ compiler('c') }}  # [not win]
     - {{ compiler('cxx') }}  # [not win]
     # http://pystan.readthedocs.io/en/latest/windows.html
     - {{ compiler('m2w64_c') }}  # [win]
     - {{ compiler('m2w64_cxx') }}  # [win]
-
+    - libpython  # [win]
+    - setuptools
 
 about:
   home: http://mc-stan.org/interfaces/pystan.html
