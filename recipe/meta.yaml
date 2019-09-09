@@ -25,6 +25,9 @@ requirements:
     - {{ compiler('m2w64_cxx') }}  # [win]
     - libpython  # [win]
     - setuptools
+    - cython >=0.22,!=0.25.1
+    - numpy
+    - {{ pin_compatible('numpy') }}
   host:
     - python
     - pip
@@ -49,6 +52,9 @@ test:
     - {{ compiler('m2w64_cxx') }}  # [win]
     - libpython  # [win]
     - setuptools
+    - cython >=0.22,!=0.25.1
+    - numpy
+    - {{ pin_compatible('numpy') }}
 
 about:
   home: http://mc-stan.org/interfaces/pystan.html
