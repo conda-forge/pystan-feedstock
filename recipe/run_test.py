@@ -1,6 +1,7 @@
 import pystan
 import os
 print(os)
+os.system("gcc --version")
 
 schools_code = """
 data {

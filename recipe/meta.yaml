@@ -44,6 +44,12 @@ test:
   imports:
     - pystan
   requires:
+    - {{ compiler('c') }}  # [not win]
+    - {{ compiler('cxx') }}  # [not win]
+    # http://pystan.readthedocs.io/en/latest/windows.html
+    - {{ compiler('m2w64_c') }}  # [win]
+    - {{ compiler('m2w64_cxx') }}  # [win]
+    - libpython  # [win]
     - setuptools
     - cython >=0.22,!=0.25.1
     - numpy
