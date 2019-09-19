@@ -41,7 +41,6 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - cython >=0.22,!=0.25.1
     - setuptools
-    - nose
     - scipy
     - matplotlib
     - arviz  # [py>=35]
