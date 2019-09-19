@@ -32,6 +32,7 @@ requirements:
     - setuptools
     - libpython  # [win]
   run:
+    - python
     - {{ compiler('c') }}  # [not win]
     - {{ compiler('cxx') }}  # [not win]
     # http://pystan.readthedocs.io/en/latest/windows.html
