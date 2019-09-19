@@ -32,9 +32,15 @@ requirements:
     - setuptools
     - libpython  # [win]
   run:
+    - {{ compiler('c') }}  # [not win]
+    - {{ compiler('cxx') }}  # [not win]
+    # http://pystan.readthedocs.io/en/latest/windows.html
+    - {{ compiler('m2w64_c') }}  # [win]
+    - {{ compiler('m2w64_cxx') }}  # [win]  
     - {{ pin_compatible('numpy') }}
     - cython >=0.22,!=0.25.1
     - setuptools
+    - nose
     - scipy
     - matplotlib
     - arviz  # [py>=35]
@@ -43,17 +49,6 @@ requirements:
 test:
   imports:
     - pystan
-  requires:
-    - {{ compiler('c') }}  # [not win]
-    - {{ compiler('cxx') }}  # [not win]
-    # http://pystan.readthedocs.io/en/latest/windows.html
-    - {{ compiler('m2w64_c') }}  # [win]
-    - {{ compiler('m2w64_cxx') }}  # [win]
-    - libpython  # [win]
-    - setuptools
-    - cython >=0.22,!=0.25.1
-    - numpy
-    - nose
 
 about:
   home: http://mc-stan.org/interfaces/pystan.html
