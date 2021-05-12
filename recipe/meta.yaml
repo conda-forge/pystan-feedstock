@@ -41,11 +41,10 @@ requirements:
     - {{ compiler('m2w64_cxx') }}  # [win]
     - {{ pin_compatible('numpy') }}
     - cython >=0.22,!=0.25.1
-    - setuptools
-    - scipy
-    - matplotlib-base
-    - arviz
-    - libpython  # [win]
+    - aiohttp ~=3.6
+    - clikit ~=0.6
+    - httpstan ~=4.4
+    - pysimdjson ~=3.2
 
 test:
   imports:
