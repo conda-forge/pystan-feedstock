@@ -28,6 +28,7 @@ requirements:
     - pip
     - numpy
     - cython >=0.22,!=0.25.1
+    - poetry
     - scipy
     - setuptools
     - libpython  # [win]
