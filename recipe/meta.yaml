@@ -1,6 +1,6 @@
 {% set name = "pystan" %}
-{% set version = "2.19.1.1" %}
-{% set sha256sum = "fa8bad8dbc0da22bbe6f36af56c9abbfcf10f92df8ce627d59a36bd8d25eb038" %}
+{% set version = "3.1.1" %}
+{% set sha256sum = "b46dce24999dc76366b5410c49a5d8b4067b1315e6265e097da8c6138a4f9590" %}
 
 package:
   name: {{ name }}
@@ -12,9 +12,9 @@ source:
   sha256: {{ sha256sum }}
 
 build:
-  number: 2
-  skip: True  # [win and py27]
-  detect_binary_files_with_prefix: False
+  number: 0
+  skip: true  # [win and py27]
+  detect_binary_files_with_prefix: false
 
 requirements:
   build:
@@ -28,6 +28,7 @@ requirements:
     - pip
     - numpy
     - cython >=0.22,!=0.25.1
+    - poetry
     - scipy
     - setuptools
     - libpython  # [win]
@@ -37,22 +38,21 @@ requirements:
     - {{ compiler('cxx') }}  # [not win]
     # http://pystan.readthedocs.io/en/latest/windows.html
     - {{ compiler('m2w64_c') }}  # [win]
-    - {{ compiler('m2w64_cxx') }}  # [win]  
+    - {{ compiler('m2w64_cxx') }}  # [win]
     - {{ pin_compatible('numpy') }}
     - cython >=0.22,!=0.25.1
-    - setuptools
-    - scipy
-    - matplotlib-base
-    - arviz  # [py>=35]
-    - libpython  # [win]
+    - aiohttp ~=3.6
+    - clikit ~=0.6
+    - httpstan ~=4.4
+    - pysimdjson ~=3.2
 
 test:
   imports:
-    - pystan
+    - stan
 
 about:
   home: http://mc-stan.org/interfaces/pystan.html
-  license: GPLv3
+  license: ISC
   license_file: LICENSE
   summary: Python interface to Stan, a package for Bayesian inference
   description: |
@@ -65,3 +65,4 @@ about:
 extra:
   recipe-maintainers:
     - rmax
+    - dhirschfeld
