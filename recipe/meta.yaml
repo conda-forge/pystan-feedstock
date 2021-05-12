@@ -1,6 +1,6 @@
 {% set name = "pystan" %}
-{% set version = "2.19.1.1" %}
-{% set sha256sum = "fa8bad8dbc0da22bbe6f36af56c9abbfcf10f92df8ce627d59a36bd8d25eb038" %}
+{% set version = "3.1.1" %}
+{% set sha256sum = "b46dce24999dc76366b5410c49a5d8b4067b1315e6265e097da8c6138a4f9590" %}
 
 package:
   name: {{ name }}
@@ -12,9 +12,9 @@ source:
   sha256: {{ sha256sum }}
 
 build:
-  number: 3
-  skip: True  # [win and py27]
-  detect_binary_files_with_prefix: False
+  number: 0
+  skip: true  # [win and py27]
+  detect_binary_files_with_prefix: false
 
 requirements:
   build:
