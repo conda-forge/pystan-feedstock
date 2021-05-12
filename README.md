@@ -3,7 +3,7 @@ About pystan
 
 Home: http://mc-stan.org/interfaces/pystan.html
 
-Package license: GPLv3
+Package license: ISC
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pystan-feedstock/blob/master/LICENSE.txt)
 
@@ -234,6 +234,5 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@beckermr](https://github.com/beckermr/)
 * [@rmax](https://github.com/rmax/)
 
