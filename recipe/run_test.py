@@ -5,30 +5,31 @@ os.system("gcc --version")
 
 schools_code = """
 data {
-    int<lower=0> J; // number of schools
-    real y[J]; // estimated treatment effects
-    real<lower=0> sigma[J]; // s.e. of effect estimates
+    int<lower=0> J;         // number of schools
+    real y[J];              // estimated treatment effects
+    real<lower=0> sigma[J]; // standard error of effect estimates
 }
 parameters {
-    real mu;
-    real<lower=0> tau;
-    real eta[J];
+    real mu;                // population treatment effect
+    real<lower=0> tau;      // standard deviation in treatment effects
+    vector[J] eta;          // unscaled deviation from mu by school
 }
 transformed parameters {
-    real theta[J];
-    for (j in 1:J)
-        theta[j] = mu + tau * eta[j];
+    vector[J] theta = mu + tau * eta;        // school treatment effects
 }
 model {
-    eta ~ normal(0, 1);
-    y ~ normal(theta, sigma);
+    target += normal_lpdf(eta | 0, 1);       // prior log-density
+    target += normal_lpdf(y | theta, sigma); // log-likelihood
 }
 """
 
-schools_dat = {'J': 8,
-               'y': [28,  8, -3,  7, -1,  1, 18, 12],
-               'sigma': [15, 10, 16, 11,  9, 11, 10, 18]}
+schools_data = {"J": 8,
+                "y": [28,  8, -3,  7, -1,  1, 18, 12],
+                "sigma": [15, 10, 16, 11,  9, 11, 10, 18]}
 
-fit = pystan.stan(model_code=schools_code, data=schools_dat,
-                  iter=1000, chains=4, n_jobs=1)
-print(fit)
+posterior = stan.build(schools_code, data=schools_data)
+fit = posterior.sample(num_chains=4, num_samples=1000)
+eta = fit["eta"]  # array with shape (8, 4000)
+df = fit.to_frame()
+
+print(repr(df))
