@@ -13,7 +13,7 @@ source:
 
 build:
   number: 3
-  skip: True  # [win and py27]
+  skip: True  # [py<36]
   detect_binary_files_with_prefix: False
 
 requirements:
