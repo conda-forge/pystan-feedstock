@@ -40,19 +40,18 @@ requirements:
     - {{ compiler('m2w64_cxx') }}  # [win]
     - {{ pin_compatible('numpy') }}
     - cython >=0.22,!=0.25.1
-    - setuptools
-    - scipy
-    - matplotlib-base
-    - arviz  # [py>=35]
-    - libpython  # [win]
+    - aiohttp ~=3.6
+    - clikit ~=0.6
+    - httpstan ~=4.4
+    - pysimdjson ~=3.2
 
 test:
   imports:
-    - pystan
+    - stan
 
 about:
   home: http://mc-stan.org/interfaces/pystan.html
-  license: GPL-3.0
+  license: ISC
   license_file: LICENSE
   summary: Python interface to Stan, a package for Bayesian inference
   description: |
@@ -66,3 +65,4 @@ extra:
   recipe-maintainers:
     - rmax
     - dhirschfeld
+    - oblute
