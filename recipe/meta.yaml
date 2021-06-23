@@ -1,6 +1,6 @@
 {% set name = "pystan" %}
-{% set version = "2.19.1.1" %}
-{% set sha256sum = "fa8bad8dbc0da22bbe6f36af56c9abbfcf10f92df8ce627d59a36bd8d25eb038" %}
+{% set version = "3.2.0" %}
+{% set sha256sum = "aab87b5d1443ff41d786bd8770d1ce03c3c695adcb309c2cfa2c4ea95bd332ab" %}
 
 package:
   name: {{ name }}
@@ -12,8 +12,8 @@ source:
   sha256: {{ sha256sum }}
 
 build:
-  number: 3
-  skip: True  # [win and py27]
+  number: 0
+  skip: True  # [py<37]
   detect_binary_files_with_prefix: False
 
 requirements:
@@ -31,6 +31,7 @@ requirements:
     - scipy
     - setuptools
     - libpython  # [win]
+    - poetry
   run:
     - python
     - {{ compiler('c') }}  # [not win]
@@ -40,19 +41,19 @@ requirements:
     - {{ compiler('m2w64_cxx') }}  # [win]
     - {{ pin_compatible('numpy') }}
     - cython >=0.22,!=0.25.1
-    - setuptools
-    - scipy
-    - matplotlib-base
-    - arviz  # [py>=35]
-    - libpython  # [win]
+    - aiohttp ~=3.6
+    - clikit ~=0.6
+    - httpstan ~=4.4
+    - pysimdjson ~=3.2
+    - cmdstanpy
 
 test:
   imports:
-    - pystan
+    - stan
 
 about:
   home: http://mc-stan.org/interfaces/pystan.html
-  license: GPL-3.0
+  license: ISC
   license_file: LICENSE
   summary: Python interface to Stan, a package for Bayesian inference
   description: |
@@ -66,3 +67,4 @@ extra:
   recipe-maintainers:
     - rmax
     - dhirschfeld
+    - oblute
