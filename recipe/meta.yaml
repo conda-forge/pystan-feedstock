@@ -45,6 +45,7 @@ requirements:
     - clikit ~=0.6
     - httpstan ~=4.4
     - pysimdjson ~=3.2
+    - cmdstanpy
 
 test:
   imports:
