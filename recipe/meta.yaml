@@ -31,6 +31,7 @@ requirements:
     - scipy
     - setuptools
     - libpython  # [win]
+    - poetry
   run:
     - python
     - {{ compiler('c') }}  # [not win]
