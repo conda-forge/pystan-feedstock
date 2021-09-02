@@ -30,8 +30,6 @@ requirements:
     - cython >=0.22,!=0.25.1
     - scipy
     - setuptools
-    - libpython  # [win]
-    - poetry
   run:
     - python
     - {{ compiler('c') }}  # [not win]
@@ -42,13 +40,10 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - cython >=0.22,!=0.25.1
     - setuptools
-    - scipy
-    - matplotlib-base
-    - arviz  # [py>=35]
-    - libpython  # [win]
     - clikit >=0.6,<0.7
     - httpstan >=4.5,<4.6
     - pysimdjson
+    - aiohttp
 
 test:
   imports:
