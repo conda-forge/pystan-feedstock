@@ -46,7 +46,6 @@ requirements:
     - matplotlib-base
     - arviz  # [py>=35]
     - libpython  # [win]
-    - aiohttp >=3.6,<4.0
     - clikit >=0.6,<0.7
     - httpstan >=4.5,<4.6
     - pysimdjson >=3.2,<4.0
