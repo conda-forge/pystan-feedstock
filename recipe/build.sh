@@ -8,7 +8,6 @@ rm -rf pystan/*.cpp
 
 # These folders are not needed in the build and we don't want to include them
 # in the package. This should be cleaned via MANIFEST.in.
-pushd pystan/stan/lib/stan_math
 rm -fr doc doxygen make test lib/cpplist_* lib/gtest_*
 popd
 
