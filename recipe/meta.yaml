@@ -48,7 +48,7 @@ requirements:
     - libpython  # [win]
     - clikit >=0.6,<0.7
     - httpstan >=4.5,<4.6
-    - pysimdjson >=3.2,<4.0
+    - pysimdjson
 
 test:
   imports:
