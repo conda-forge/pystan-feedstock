@@ -21,7 +21,7 @@ requirements:
     - {{ compiler('c') }} 
     - {{ compiler('cxx') }} 
   host:
-    - python
+    - python >=3.7
     - pip
     - numpy >=1.7,<2.0
     - cython >=0.22,!=0.25.1
@@ -29,7 +29,7 @@ requirements:
     - setuptools
     - poetry 
   run:
-    - python
+    - python >=3.7
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ pin_compatible('numpy') }}
@@ -37,8 +37,8 @@ requirements:
     - setuptools
     - clikit >=0.6,<0.7
     - httpstan >=4.5,<4.6
-    - pysimdjson
-    - aiohttp
+    - pysimdjson >=3.2
+    - aiohttp >=3.6
 
 test:
   imports:
