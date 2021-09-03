@@ -1,4 +1,4 @@
-import pystan
+import stan
 import os
 print(os)
 os.system("gcc --version")
