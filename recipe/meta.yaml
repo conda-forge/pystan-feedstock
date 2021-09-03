@@ -48,7 +48,7 @@ requirements:
 
 test:
   imports:
-    - pystan
+    - stan
 
 about:
   home: http://mc-stan.org/interfaces/pystan.html
