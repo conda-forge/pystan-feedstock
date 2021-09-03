@@ -13,13 +13,13 @@ source:
 
 build:
   number: 0
-  skip: True  # [win and py27]
+  skip: True  # [win]
   detect_binary_files_with_prefix: False
 
 requirements:
   build:
-    - {{ compiler('c') }}  # [not win]
-    - {{ compiler('cxx') }}  # [not win]
+    - {{ compiler('c') }} 
+    - {{ compiler('cxx') }} 
   host:
     - python
     - pip
@@ -30,14 +30,14 @@ requirements:
     - poetry 
   run:
     - python
-    - {{ compiler('c') }}  # [not win]
-    - {{ compiler('cxx') }}  # [not win]
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - {{ pin_compatible('numpy') }}
     - cython >=0.22,!=0.25.1
     - setuptools
     - clikit >=0.6,<0.7
     - httpstan >=4.5,<4.6
-    - pysimdjson # [not win]
+    - pysimdjson
     - aiohttp
 
 test:
