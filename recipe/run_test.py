@@ -27,4 +27,5 @@ schools_data = {"J": 8,
 posterior = stan.build(schools_code, data=schools_data, random_seed=1)
 fit = posterior.sample(num_chains=4, num_samples=1000)
 
+fit["eta"]
 print(fit)
