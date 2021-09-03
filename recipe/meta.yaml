@@ -30,6 +30,7 @@ requirements:
     - cython >=0.22,!=0.25.1
     - scipy
     - setuptools
+    - poetry 
   run:
     - python
     - {{ compiler('c') }}  # [not win]
