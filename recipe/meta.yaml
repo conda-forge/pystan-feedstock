@@ -22,7 +22,7 @@ requirements:
   host:
     - python >=3.7
     - pip
-    - {{ pin_compatible('numpy') }}
+    - numpy
     - cython >=0.22,!=0.25.1
     - scipy
     - setuptools
