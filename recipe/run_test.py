@@ -1,8 +1,4 @@
 import stan
-import os
-print(os)
-
-import stan
 
 schools_code = """
 data {
