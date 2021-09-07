@@ -23,7 +23,6 @@ requirements:
     - python >=3.7
     - pip
     - numpy
-    - cython >=0.22,!=0.25.1
     - scipy
     - setuptools
     - poetry 
@@ -31,7 +30,6 @@ requirements:
     - python >=3.7
     - {{ compiler('cxx') }}
     - {{ pin_compatible('numpy') }}
-    - cython >=0.22,!=0.25.1
     - setuptools
     - clikit >=0.6,<0.7
     - httpstan >=4.5,<4.6
