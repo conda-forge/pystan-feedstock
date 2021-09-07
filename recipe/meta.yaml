@@ -17,7 +17,6 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }} 
     - {{ compiler('cxx') }} 
   host:
     - python >=3.7
@@ -29,7 +28,6 @@ requirements:
     - poetry 
   run:
     - python >=3.7
-    - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ pin_compatible('numpy') }}
     - cython >=0.22,!=0.25.1
