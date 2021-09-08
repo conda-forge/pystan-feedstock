@@ -14,7 +14,6 @@ source:
 build:
   number: 0
   skip: True  # [win]
-  entry_points = "stan.plugins": ["names = mymodule:PrintParameterNames"]
 
 requirements:
   build:
@@ -39,6 +38,7 @@ requirements:
 test:
   imports:
     - stan
+    - stan.build
 
 about:
   home: http://mc-stan.org/interfaces/pystan.html
