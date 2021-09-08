@@ -38,7 +38,10 @@ requirements:
 test:
   imports:
     - stan
-    - stan.build
+    - stan.common
+    - stan.fit
+    - stan.model
+    - stan.plugins
 
 about:
   home: http://mc-stan.org/interfaces/pystan.html
