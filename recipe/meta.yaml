@@ -13,7 +13,7 @@ source:
 
 build:
   number: 0
-  skip: True  # [win & py36]
+  skip: True  # [win][py36]
 
 requirements:
   build:
