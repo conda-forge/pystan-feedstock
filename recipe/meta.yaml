@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256sum }}
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win or py36]
 
 requirements:
