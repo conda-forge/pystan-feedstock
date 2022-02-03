@@ -1,5 +1,5 @@
 {% set name = "pystan" %}
-{% set version = "3.2.0" %}
+{% set version = "3.3.0" %}
 
 package:
   name: {{ name }}
@@ -7,25 +7,25 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: aab87b5d1443ff41d786bd8770d1ce03c3c695adcb309c2cfa2c4ea95bd332ab
+  sha256: 44a26a88b70f9f3b0d20864fb0f72366b902b58908d6ad4360758d037c0ed3f4
 
 build:
   number: 0
-  skip: True  # [win]
+  skip: true  # [win]
 
 requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
-    - {{ compiler('cxx') }} 
+    - {{ compiler('cxx') }}
   host:
     - python
     - pip
     - numpy
     - scipy
     - setuptools
-    - poetry 
+    - poetry
   run:
     - python
     - {{ compiler('cxx') }}
