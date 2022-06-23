@@ -1,9 +1,7 @@
-appveyor:
-  secure: {BINSTAR_TOKEN: tumuXLL8PU75WMnRDemRy02ruEq2RpNxeK3dz0MjFssnosPm2v4EFjfNB4PTotA1}
-compiler_stack: comp7
-max_py_ver: '37'
-max_r_ver: '35'
-travis:
-  secure: {BINSTAR_TOKEN: IJgErpLtO9mXEPF9yXMe9WXUKzq+Vq2RZkD4RmExMS3cgdoEOiBQ7hDlnyFkcyFSKDLAv7tOgokaPuau6WNf0Dxdi6whwGnZiVfRB8SfJFaWFfy2mCvbBQrcI6+S2QDl0IcM6WIfd3D/9QKPF6UC9YTzCPku4s8SyHYRb83JkvA4vWKzxkmENrCWL6B3At32UJDsTGFkVQK4KttA2ZlFAgMUnF6pX4k+SK8JiI5gp/Rrh9mElNvr+C/r0GfG9sqIMhIefQkEsnJ8gTqlHv79UbC8u4GH5aYqZeaRigBASEtocQJEYMp/+4SQygyARAtKpnLKB0bHhzIb9c/aQdJf2CrP45daXYRvE6HW/9t2q9663IZupwFFhbKJTmlv6sPvNxHD64n2ewzqePPa6FE1LYNedtur8XotlfhcVOKYsQsna94gges/JoA0EJXm9oKMJpWFF8StSQeck/13aMGWXVDLnUMOUEBriS3Fwv7gnDS7q+HF7CWcEa3L12Aw4REpiXOUHWi6Zg3l+AzjbbG5NZqoZhEG8JPgKpja1e1KS5SfufUm8yVLxnYLutZvmmpZZ0JBTmq5nqA+i/40Y3GEkRBqNmlN9QsOnHEoJF8+9cn2htjgoWEp2z8Z0ejqcdqEObepDqNtj5+E0tI+0aWqv/1zuOOy9cuoAc1kCSKXy5A=}
-provider:
-  win: azure
+build_platform:
+  osx_arm64: osx_64
+conda_forge_output_validation: true
+test_on_native_only: true
+github:
+  branch_name: main
+  tooling_branch_name: main
