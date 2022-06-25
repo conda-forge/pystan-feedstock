@@ -1,6 +1,8 @@
 import pystan
 import os
-print(os)
+print(os.environ)
+os.environ["CC"] = 'gcc'
+os.environ["CXX"] = 'g++'
 os.system("gcc --version")
 
 schools_code = """

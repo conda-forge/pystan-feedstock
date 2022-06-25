@@ -7,17 +7,19 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256sum }}
+  sha256: fa8bad8dbc0da22bbe6f36af56c9abbfcf10f92df8ce627d59a36bd8d25eb038
 
 build:
-  number: 0
-  skip: True  # [win and py27]
+  skip: true  # [win]
+  number: 1
   detect_binary_files_with_prefix: False
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}  # [not win]
     - {{ compiler('cxx') }}  # [not win]
     # http://pystan.readthedocs.io/en/latest/windows.html
@@ -42,8 +44,8 @@ requirements:
     - cython >=0.22,!=0.25.1
     - setuptools
     - scipy
-    - matplotlib
-    - arviz  # [py>=35]
+    - matplotlib-base
+    - arviz
     - libpython  # [win]
 
 test:
