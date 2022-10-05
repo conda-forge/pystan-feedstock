@@ -10,7 +10,7 @@ source:
   sha256: 44a26a88b70f9f3b0d20864fb0f72366b902b58908d6ad4360758d037c0ed3f4
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
@@ -32,7 +32,7 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - setuptools
     - clikit >=0.6,<0.7
-    - httpstan >=4.5,<4.6
+    - httpstan >=4.6,<4.7
     - pysimdjson >=3.2
     - aiohttp >=3.6
 
