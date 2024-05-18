@@ -10,7 +10,7 @@ source:
   sha256: e113321f45d7f74412b0fbd1c2a33e092c9cf52b1ee6c15feb28d53b6803aad7
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
@@ -29,7 +29,7 @@ requirements:
   run:
     - python
     - {{ compiler('cxx') }}
-    - {{ pin_compatible('numpy') }}
+    - {{ stdlib("c") }}
     - setuptools
     - clikit >=0.6,<0.7
     - httpstan >=4.6,<4.7
