@@ -18,6 +18,7 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
+    - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
   host:
     - python
@@ -28,10 +29,6 @@ requirements:
     - poetry
   run:
     - python
-    - {{ compiler('cxx') }}
-    - {{ stdlib("c") }}
-    - {{ pin_compatible('numpy') }}
-    - setuptools
     - clikit >=0.6,<0.7
     - httpstan >=4.6,<4.7
     - pysimdjson >=3.2
