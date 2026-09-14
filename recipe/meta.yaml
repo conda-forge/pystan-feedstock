@@ -1,13 +1,13 @@
 {% set name = "pystan" %}
-{% set version = "3.10.0" %}
+{% set version = "3.14.0" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2e6c1cdbec8b2769f134b35a19e59e6655074da0c2f807af78dc310a99a8eb79
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: d5d06ff5225847358ad78d563c6d3ea8514cc77b33b33587d54af64623048b12
 
 build:
   number: 0
